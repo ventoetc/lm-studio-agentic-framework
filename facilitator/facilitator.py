@@ -58,10 +58,7 @@ class Facilitator:
                 if self.current_phase == "orientation":
                     self.current_phase = "execution"
                     self.agent_role = "builder"
-                    # Strip the token for display
                     response_text = response_text.replace("[PHASE_COMPLETE]", "").strip()
-                    # Append a system note about transition (optional)
-                    # response_text += "\n\n*(Phase 1 Complete. Switching to Builder Mode.)*"
             
             # 4. Phase Enforcement
             if self.current_phase == "orientation":
@@ -70,11 +67,22 @@ class Facilitator:
                     reset_msg = perform_reset(self, reason=f"Phase 1 Violation: {error}")
                     return f"[SYSTEM RESET] {reset_msg}\n\nOriginal Response (Discarded): {response_text}"
             
-            # 5. Update History
+            # 5. Add Badge (Visual Indicator)
+            badge = ""
+            if self.agent_role == "orientation":
+                badge = "### 🧭 **Orientation Agent**\n\n"
+            elif self.agent_role == "builder":
+                badge = "### 🛠️ **Builder Agent**\n\n"
+            elif self.agent_role == "critic":
+                badge = "### 🧐 **Critic Agent**\n\n"
+                
+            final_response = badge + response_text
+            
+            # 6. Update History (Store RAW response without badge to avoid confusing LLM)
             self.history.append({"role": "user", "content": message})
             self.history.append({"role": "assistant", "content": response_text})
             
-            return response_text
+            return final_response
             
         except Exception as e:
             reset_msg = perform_reset(self, reason=f"Runtime Error: {str(e)}")
