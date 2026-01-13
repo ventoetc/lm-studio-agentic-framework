@@ -1,0 +1,23 @@
+{
+  "id": "d1db20aa-b11b-46f4-b194-a63851a71ff0",
+  "title": "How many r's in the word straw...",
+  "timestamp": "2026-01-09T18:44:05.277662",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "How many r's in the word strawberry"
+    },
+    {
+      "role": "user",
+      "content": "How many r's in the word strawberry"
+    },
+    {
+      "role": "assistant",
+      "content": "Let's count the number of times the letter \"r\" appears in the word **\"strawberry\"**:\n\n- s **t** r a w b e r r y\n\nThe letter \"r\" appears **3 times**."
+    }
+  ]
+}

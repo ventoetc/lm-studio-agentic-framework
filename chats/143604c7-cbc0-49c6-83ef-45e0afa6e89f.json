@@ -1,0 +1,27 @@
+{
+  "id": "143604c7-cbc0-49c6-83ef-45e0afa6e89f",
+  "title": "Why is the sky blue? Now expla...",
+  "timestamp": "2026-01-09T19:11:14.815952",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "Why is the sky blue? Now explain why sunsets are red."
+    },
+    {
+      "role": "assistant",
+      "content": ""
+    },
+    {
+      "role": "user",
+      "content": "Why is the sky blue? Now explain why sunsets are red."
+    },
+    {
+      "role": "assistant",
+      "content": ""
+    }
+  ]
+}

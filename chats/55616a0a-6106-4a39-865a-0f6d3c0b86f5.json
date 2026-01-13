@@ -1,0 +1,19 @@
+{
+  "id": "55616a0a-6106-4a39-865a-0f6d3c0b86f5",
+  "title": "summarize document for somebod...",
+  "timestamp": "2026-01-09T18:45:30.649690",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "summarize document for somebody who's less then 10"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure! Here\u2019s a simple summary of the document:\n\n---\n\n**Summary: How to Make Chatbots Better**\n\nChatbots today are like robots that follow steps, even when they don\u2019t need to. They often ask too many questions or make users wait longer than necessary.\n\n### The Problem:\n1. **Too Many Rules in Too Many Places**: Chatbots have rules scattered everywhere\u2014some for the whole system, some just for specific tasks (like booking a hotel). This makes it hard to fix or update them.\n2. **Unnecessary Long Chats**: Sometimes chatbots force users to answer more questions than they should. For example, if you ask about hotel prices, they might keep asking for your name or date instead of just showing the price.\n3. **Hard to Test and Fix**: When you change one part of a chatbot, other parts might break. Testing everything takes too much time.\n\n### The Solution:\n1. **Group Similar Tasks Together**:\n   - Put all booking-related tasks (like reservations, appointments) in one group.\n   - Do the same for support (help, troubleshooting) or money stuff (payments).\n   - This way, you can update rules for a whole group at once instead of fixing each task separately.\n\n2. **Separate Big Rules and Small Rules**:\n   - **Big Rules**: These apply to everything (like how the chatbot handles mistakes or asks follow-up questions). They rarely change.\n   - **Small Rules**: These are for specific tasks (like what info is needed for booking a hotel).\n\n3. **Use Templates**:\n   - Instead of writing new rules for every task, use templates (pre-made instructions) for common things like:\n     - Single-step answers (e.g., \"What\u2019s the weather?\").\n     - Step-by-step guides (e.g., booking a flight).\n     - Direct answers (e.g., answering FAQs).\n\n4. **Test Better**:\n   - Automatically test changes to see if they break anything.\n   - Try different versions of rules (A/B testing) to see which works best.\n\n### Why This Works:\n- **Easier to Manage**: Rules are organized, so teams can work on groups instead of individual tasks.\n- **Faster Fixes**: Changes apply cleanly without breaking other parts.\n- **Better for Users**: Chatbots give quick answers instead of long chats unless needed.\n\n---\n\n**In Short**: The document says chatbots should be smarter about giving direct answers and have rules organized in a way that makes them easier to update and test. This helps them work better at scale!"
+    }
+  ]
+}

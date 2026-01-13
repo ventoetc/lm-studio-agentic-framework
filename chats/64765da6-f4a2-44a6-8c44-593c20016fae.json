@@ -1,0 +1,19 @@
+{
+  "id": "64765da6-f4a2-44a6-8c44-593c20016fae",
+  "title": "can you explain what model mix...",
+  "timestamp": "2026-01-09T18:30:23.933907",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "can you explain what model mix is?"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on the provided document, **ModelMix** is an **AI platform designed to give users more control, transparency, and choice when using artificial intelligence.**\n\nHere's a breakdown of what it is and how it works:\n\n1.  **The Core Problem it Solves:** Most people use AI through a single tool (like ChatGPT or Gemini), leading to \"AI tunnel vision.\" This means you only see one model's perspective, are limited by its specific strengths/weaknesses/biases, and become dependent on a single provider.\n\n2.  **The Solution:** ModelMix is a **multi-model AI platform** that lets you compare the responses of **up to 10 different AI models** (from providers like OpenAI, Anthropic, Google, etc.) **side-by-side in real-time**.\n\n3.  **Key Benefits:**\n    *   **Find the Best Answer:** See different approaches and pick the best response for your needs (e.g., one model might be better for creativity, another for logic).\n    *   **Understand the Tradeoffs:** See how models differ in speed, detail, and style, making AI performance more transparent.\n    *   **Avoid Lock-in:** It's fundamentally **vendor-neutral** and built on **open-source** software, giving users ownership and reducing dependence on any single company.\n\n4.  **How it Works:**\n    *   **Compare Models:** Use a multi-panel chat interface to query multiple models at once and see their answers next to each other.\n    *   **Simple Credit System:** Users pay with a credit system (no complex subscriptions). New users get a free 500-credit signup bonus.\n    *   **Flexible Access:** Choose between a **Hosted Version** (easy, managed SaaS) or a **Self-Hosted Version** (total control, run on your own infrastructure for privacy/customization).\n    *   **Smart Routing:** A \"Provider Routing\" system automatically finds the best way to send your request to the AI model, using your direct API keys if available, or a unified gateway (like OpenRouter) otherwise, ensuring reliability and cost-effectiveness.\n\n5.  **Who It's For:**\n    *   **Explorers:** To discover which AI is best for creative tasks, travel planning, or homework.\n    *   **Analysts:** To cross-check facts, spot biases, and synthesize accurate information.\n    *   **Developers:** To rapidly prototype and test multiple AI models in one place.\n\n**In short, ModelMix is an AI playground that gives you \"peripheral vision\" by showing you multiple AI opinions at once. It turns AI from a single, opaque tool into a transparent marketplace of ideas, putting you firmly in command.** You can start for free."
+    }
+  ]
+}
