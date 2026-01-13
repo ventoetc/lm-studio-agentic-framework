@@ -3,6 +3,8 @@ import uuid
 import socket
 from datetime import datetime
 from utils import get_client, extract_text_from_file, save_chat_history, load_chat_history, get_all_chats, delete_chat, encode_image, get_system_tools, get_models
+from router import route_request
+from facilitator.facilitator import Facilitator
 
 def get_local_ip():
     try:
@@ -94,6 +96,15 @@ with st.sidebar:
     # Settings (Collapsed)
     with st.expander("⚙️ Settings"):
         st.info(f"📱 **Mobile Access**\n\nhttp://{get_local_ip()}:8501")
+        
+        # Agent Mode
+        st.caption("Agentic Framework")
+        agent_mode = st.checkbox("Enable Agent Mode", value=False, key="agent_mode_cb", help="Enable the autonomous agentic execution framework.")
+        if agent_mode and "facilitator" not in st.session_state:
+            st.session_state.facilitator = Facilitator()
+            
+        st.divider()
+
         base_url = st.text_input("Base URL", value="http://localhost:1234/v1")
         
         # Model Selection with Fetch
@@ -210,6 +221,28 @@ if prompt := st.chat_input("What would you like to know?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
+
+    # --- Agentic Interception ---
+    if st.session_state.get("agent_mode_cb", False):
+        with st.chat_message("assistant"):
+            with st.spinner("Agent is working..."):
+                try:
+                    facilitator = st.session_state.get("facilitator")
+                    if not facilitator:
+                         facilitator = Facilitator()
+                         st.session_state.facilitator = facilitator
+                         
+                    response_obj = route_request(prompt, agent_mode_enabled=True, facilitator=facilitator)
+                    
+                    if response_obj["type"] == "agent":
+                        response_text = response_obj["payload"]
+                        st.markdown(response_text)
+                        st.session_state.messages.append({"role": "assistant", "content": response_text})
+                        save_chat_history(st.session_state.chat_id, st.session_state.messages, title=st.session_state.chat_title)
+                        st.rerun()
+                except Exception as e:
+                    st.error(f"Agent System Error: {e}")
+    # ----------------------------
 
     # Prepare messages for API (Optimized Context Window)
     # 1. Base System Message
