@@ -1,0 +1,19 @@
+{
+  "id": "5e1de00e-059d-4c51-b254-b60caddbe4f3",
+  "title": "New Chat",
+  "timestamp": "2026-01-12T22:00:31.540429",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "is a hotdog a sandwich or taco?"
+    },
+    {
+      "role": "assistant",
+      "content": "### \ud83e\udded **Orientation Agent**\n\nTo clarify, are you asking about the classification of a hot dog in terms of food categories, or is there another context to your question that might require further explanation?"
+    }
+  ]
+}
