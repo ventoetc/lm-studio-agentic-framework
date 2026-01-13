@@ -1,0 +1,23 @@
+# Facilitator Control Surface Configuration
+
+agent_mode:
+  enabled: false
+  default_model: "local-model"
+
+phases:
+  orientation:
+    max_sentences: 4
+    allow_lists: false
+  execution:
+    require_approval: true
+
+agents:
+  orientation:
+    module: "agents.orientation"
+    class: "OrientationAgent"
+  builder:
+    module: "agents.builder"
+    class: "BuilderAgent"
+  critic:
+    module: "agents.critic"
+    class: "CriticAgent"
