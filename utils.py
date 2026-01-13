@@ -72,12 +72,72 @@ def get_system_tools():
         {
             "type": "function",
             "function": {
-                "name": "get_current_time",
-                "description": "Get the current time and date.",
+                "name": "write_file",
+                "description": "Writes content to a file. Overwrites if exists.",
                 "parameters": {
                     "type": "object",
-                    "properties": {},
-                    "required": [],
+                    "properties": {
+                        "path": {
+                            "type": "string",
+                            "description": "Relative path to the file (e.g., 'src/main.py')"
+                        },
+                        "content": {
+                            "type": "string",
+                            "description": "The full content to write to the file."
+                        }
+                    },
+                    "required": ["path", "content"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "read_file",
+                "description": "Reads the content of a file.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string",
+                            "description": "Relative path to the file."
+                        }
+                    },
+                    "required": ["path"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "run_command",
+                "description": "Executes a shell command in the current directory.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "command": {
+                            "type": "string",
+                            "description": "The shell command to execute (e.g., 'pip list', 'python main.py')."
+                        }
+                    },
+                    "required": ["command"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "list_dir",
+                "description": "Lists files and directories in the given path.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "path": {
+                            "type": "string",
+                            "description": "Directory path to list (default: '.')."
+                        }
+                    },
+                    "required": ["path"],
                 },
             },
         }
